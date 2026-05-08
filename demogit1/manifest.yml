@@ -2,7 +2,12 @@
 applications:
   - name: demogit1
     path: target/demogit1-0.0.1-SNAPSHOT.war
-    random-route: demogit1.cfapps.us10-001.hana.ondemand.com
     memory: 1024M
+    instances: 1
+    random-route: true
+
+    buildpacks:
+      - sap_java_buildpack
+
     env:
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
