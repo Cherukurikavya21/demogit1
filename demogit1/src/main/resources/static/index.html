@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SAPUI5 App</title>
+
+    <script
+        id="sap-ui-bootstrap"
+        src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_bluecrystal"
+        data-sap-ui-libs="sap.m,sap.ui.layout,sap.ui.table"
+        data-sap-ui-bindingSyntax="complex"
+        data-sap-ui-resourceroots='{
+            "kavya": "./"
+        }'
+        data-sap-ui-async="false">
+    </script>
+
+    <script>
+        sap.ui.getCore().attachInit(function () {
+
+            // Create App view
+            var oAppView = sap.ui.xmlview({
+                viewName: "kavya.view.App"
+            });
+
+            // Create Main view
+            var oMainView = sap.ui.xmlview({
+                viewName: "kavya.view.Main"
+            });
+
+            // Add Main page into App
+            oAppView.byId("idApp").addPage(oMainView);
+
+            // Place App into HTML
+            oAppView.placeAt("content");
+
+        });
+    </script>
+
+</head>
+
+<body class="sapUiBody" id="content">
+</body>
+</html>
