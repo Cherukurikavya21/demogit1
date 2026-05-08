@@ -1,0 +1,104 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="kavya.controller.Main">
+
+<Page title="Welcome to My App">
+
+    <content>
+
+        <Button text="Load Data" press="onLoadData"/>
+
+        <f:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout"
+            title="Vendor Form">
+
+            <f:content>
+
+                <Label text="Company Name"/>
+                <Input value="{/postPayload/companyName}"/>
+
+                <Label text="First Name"/>
+                <Input value="{/postPayload/firstName}"/>
+
+                <Label text="Last Name"/>
+                <Input value="{/postPayload/lastName}"/>
+
+                <Label text="Website"/>
+                <Input value="{/postPayload/webSite}"/>
+
+                <Label text="Email"/>
+                <Input value="{/postPayload/email}"/>
+
+                <Label text="Status"/>
+                <Input value="{/postPayload/status}"/>
+
+                <Label text="GST No"/>
+                <Input value="{/postPayload/gstNo}"/>
+
+            </f:content>
+
+        </f:SimpleForm>
+
+        <t:Table
+            id="idTable"
+            rows="{/vendor}"
+            visibleRowCount="5"
+            selectionMode="None">
+
+            <t:columns>
+
+                <t:Column>
+                    <t:label>
+                        <Label text="Company Name"/>
+                    </t:label>
+                    <t:template>
+                        <Text text="{companyName}"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column>
+                    <t:label>
+                        <Label text="First Name"/>
+                    </t:label>
+                    <t:template>
+                        <Text text="{firstName}"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column>
+                    <t:label>
+                        <Label text="Last Name"/>
+                    </t:label>
+                    <t:template>
+                        <Text text="{lastName}"/>
+                    </t:template>
+                </t:Column>
+
+                <t:Column>
+                    <t:label>
+                        <Label text="Email"/>
+                    </t:label>
+                    <t:template>
+                        <Text text="{email}"/>
+                    </t:template>
+                </t:Column>
+
+            </t:columns>
+
+        </t:Table>
+
+    </content>
+
+    <footer>
+        <Toolbar>
+            <ToolbarSpacer/>
+            <Button text="Save" type="Emphasized" press="onSave"/>
+        </Toolbar>
+    </footer>
+
+</Page>
+</mvc:View>
