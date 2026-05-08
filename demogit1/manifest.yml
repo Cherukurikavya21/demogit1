@@ -1,0 +1,8 @@
+---
+applications:
+  - name: demogit1
+    path: target/demogit1-0.0.1-SNAPSHOT.war
+    random-route: true
+    memory: 1024M
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
